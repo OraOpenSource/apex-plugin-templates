@@ -20,7 +20,7 @@ $.widget('ui.widgetName', {
    *  Getting: var myVal = $('#bar').foo('option', 'abc');
    */
   options: {
-
+    ajaxId : '' // This is the ajaxId for the plugin's AJAX functions to reference
   },
 
   // TODO mdsouza: debugging
@@ -142,6 +142,8 @@ $.widget('ui.widgetName', {
    *
    */
 
+  // TODO mdsouza: Example call to AJAX
+
   // TODO mdsouza: Look into docs on proper destroy function
   /**
    * Removes all functionality associcated with widget
@@ -159,4 +161,4 @@ $.widget('ui.widgetName', {
     $.Widget.prototype.destroy.apply(uiw, arguments); // default destroy
   }//destroy
 
-}); //ui._debugFunction
+}); //ui.widgetName

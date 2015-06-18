@@ -1,21 +1,28 @@
-create or replace function ajax_nest (
+create or replace function ajax_region (
   p_region in apex_plugin.t_region,
   p_plugin in apex_plugin.t_plugin )
   return apex_plugin.t_region_ajax_result
 as
   l_result apex_plugin.t_region_ajax_result;
 
-  -- AJAX paramaeters
+  -- TODO mdsouza: reference region & plugin parameters
+
+  -- %PLUGIN_ATTRIBUTES%
+
+  -- %REGION_ATTRIBUTES%
+
+  -- %AJAX_ATTRIBUTES%
+
+  -- TODO mdsouza:
+  -- AJAX attributes
   -- Rename to meaninful variable
   l_ajax_01 apex_application.g_x01%type := apex_application.g_x01;
 
+
+
 begin
-  -- debug information will be included
-  if apex_application.g_debug then
-    apex_plugin_util.debug_region (
-      p_plugin => p_plugin,
-      p_region => p_region);
-  end if;
+
+  -- %DEBUG_REGION%
 
 
   -- CODE
@@ -37,5 +44,5 @@ begin
   -- Need to return something (JSON data)
   -- https://community.oracle.com/message/13088553?et=watches.email.thread#13088553
   --  sys.owa_util.status_line(204, 'No Content');
-end ajax_nest;
+end ajax_region;
 /
